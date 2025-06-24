@@ -6,27 +6,23 @@ import { Toaster } from "sonner";
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
   subsets: ["latin"],
+  display: "swap", // <-- (Optional but good for performance)
 });
-
-
 
 export const metadata: Metadata = {
   title: "PrepWise",
-  description: "A Ai Interviewer Web app",
+  description: "An AI Interviewer Web App",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${monaSans.className} antialiased pattern`}
-      >
+      <body className={`${monaSans.variable} antialiased pattern`}>
         {children}
-
         <Toaster />
       </body>
     </html>
